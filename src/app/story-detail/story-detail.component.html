@@ -1,0 +1,8 @@
+<div *ngIf="story">
+  <h2>{{story.title}} details!</h2>
+  <div><label>Note: </label>{{story.note}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="story.summary" placeholder="summary"/>
+  </div>
+</div>
