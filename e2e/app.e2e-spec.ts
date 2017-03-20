@@ -1,10 +1,10 @@
-import { StorymAuteurPage } from './app.po';
+import { HERONIPage } from './app.po';
 
-describe('storym-auteur App', function() {
-  let page: StorymAuteurPage;
+describe('heroni App', () => {
+  let page: HERONIPage;
 
   beforeEach(() => {
-    page = new StorymAuteurPage();
+    page = new HERONIPage();
   });
 
   it('should display message saying app works', () => {
