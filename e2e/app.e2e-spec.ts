@@ -1,6 +1,6 @@
 import { HERONIPage } from './app.po';
 
-describe('heroni App', () => {
+describe('storyni App', () => {
   let page: HERONIPage;
 
   beforeEach(() => {

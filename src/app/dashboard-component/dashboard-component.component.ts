@@ -9,13 +9,13 @@ import { Story } from '../stories-component/stories.component';
 })
 export class DashboardComponentComponent implements OnInit {
 
-  constructor(private heroService: StoryService) { }
+  constructor(private storyService: StoryService) { }
 
   stories: Story[] = [];
 
   ngOnInit() {
 
-    this.heroService.getStories()
+    this.storyService.getStories()
       .then(stories => this.stories = stories.slice(1, 5));
   }
 

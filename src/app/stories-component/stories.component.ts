@@ -16,6 +16,7 @@ export class StoriesComponent implements OnInit {
   stories : Story[];
   onSelect(story: Story): void {
     this.selectedStory = story;
+    console.log(story);
   }
 
   getStories(): void {

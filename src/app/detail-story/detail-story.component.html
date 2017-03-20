@@ -1,10 +1,15 @@
-<div *ngIf="hero">
-  <h2>Les détails de l'histoire : {{hero.title}} </h2>
-  <div><label>id: </label>{{hero.id}}</div>
+<div *ngIf="story">
+  <h2>Les détails de l'histoire : {{story.title}} </h2>
+  <div><label>id: </label>{{story.id}}</div>
   <div>
     <label>Titre : </label>
-    <input [(ngModel)]="hero.title" placeholder="name"/>
+    <input [(ngModel)]="story.title" placeholder="name"/>
   </div>
+
 </div>
-<button (click)="save()">Save</button>
-<button (click)="goBack()">Back</button>
+<div>
+  <button (click)="save()">Chapitres</button>
+</div>
+
+<button (click)="save()">Enregistrer</button>
+<button (click)="goBack()">Retour</button>

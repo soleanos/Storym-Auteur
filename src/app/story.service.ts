@@ -41,9 +41,9 @@ export class StoryService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Story> {
+  create(title: string): Promise<Story> {
     return this.http
-      .post(this.storiesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.storiesUrl, JSON.stringify({title: title}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);

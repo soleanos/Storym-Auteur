@@ -1,4 +1,4 @@
-// import { Hero } from './heroes-component/heroes-component.component';
+// import { Hero } from './stories-component/stories-component.component';
 //
 // export const HEROES: Hero[] = [
 //   {id: 11, name: 'Mr. Nice'},
