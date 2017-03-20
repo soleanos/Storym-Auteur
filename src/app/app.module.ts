@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
-import { HeroService } from './hero.service';
+import { StoryService } from './story.service';
 import { AppComponent } from './app.component';
-import { DetailHeroComponent } from './detail-hero/detail-hero.component';
-import { HeroesComponentComponent } from './heroes-component/heroes-component.component';
-import {  Routes,RouterModule}   from '@angular/router';
+import { DetailStoryComponent } from './detail-story/detail-story.component';
+import { StoriesComponent } from './stories-component/stories.component';
+import { Routes,RouterModule}   from '@angular/router';
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -17,8 +17,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
 @NgModule({
   declarations: [
     AppComponent,
-    DetailHeroComponent,
-    HeroesComponentComponent,
+    DetailStoryComponent,
+    StoriesComponent,
     DashboardComponentComponent,
   ],
   imports: [
@@ -31,7 +31,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   exports: [RouterModule],
-  providers: [HeroService],
+  providers: [StoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

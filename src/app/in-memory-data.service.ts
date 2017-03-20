@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
     //   {id: 19, title: 'Magma'},
     //   {id: 20, title: 'Tornado'}
     // ];
-    let heroes = [
+    let stories = [
       {id: 11, title: 'Harry Potter à Itechsup'},
       {id: 12, title: 'Les barres de chocolats avec petite pépites'},
       {id: 13, title: 'Poulet et célérie, comment mêler l inconciliable'},
@@ -25,6 +25,6 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 19, title: 'Le grand marabou Brudele II'},
       {id: 20, title: 'Servino de la pointe de Share, histoire et révélations'}
     ];
-    return {heroes};
+    return {stories};
   }
 }

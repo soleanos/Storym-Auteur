@@ -1,23 +1,21 @@
 import { Injectable } from '@angular/core';
-// import { HEROES } from './mock-heroes';
-import { Hero } from './heroes-component/heroes-component.component';
+import { Story } from './stories-component/stories.component';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class HeroService {
+export class StoryService {
 
-  private heroesUrl = 'api/heroes';  // URL to web api
-
+  private storiesUrl = 'api/stories';  // URL to web api
+  // private storiesUrl = 'http://192.168.1.13:2403/stories';  // Mon
 
   constructor(private http: Http) { }
   private headers = new Headers({'Content-Type': 'application/json'});
-  // private heroesUrl = 'http://192.168.1.13:2403/heroes';  // Mon
 
-  getHeroes(): Promise<Hero[]> {
-    return this.http.get(this.heroesUrl)
+  getStories(): Promise<Story[]> {
+    return this.http.get(this.storiesUrl)
       .toPromise()
-      .then(response => response.json().data as Hero[])
+      .then(response => response.json().data as Story[])
       .catch(this.handleError);
   }
 
@@ -26,33 +24,33 @@ export class HeroService {
     return Promise.reject(error.message || error);
   }
 
-  getHero(id: number): Promise<Hero> {
-    const url = `${this.heroesUrl}/${id}`;
+  getStory(id: number): Promise<Story> {
+    const url = `${this.storiesUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Hero)
+      .then(response => response.json().data as Story)
       .catch(this.handleError);
   }
 
-  update(hero: Hero): Promise<Hero> {
-    const url = `${this.heroesUrl}/${hero.id}`;
+  update(story: Story): Promise<Story> {
+    const url = `${this.storiesUrl}/${story.id}`;
     return this.http
-      .put(url, JSON.stringify(hero), {headers: this.headers})
+      .put(url, JSON.stringify(story), {headers: this.headers})
       .toPromise()
-      .then(() => hero)
+      .then(() => story)
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Hero> {
+  create(name: string): Promise<Story> {
     return this.http
-      .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.storiesUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);
   }
 
   delete(id: number): Promise<void> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = `${this.storiesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
