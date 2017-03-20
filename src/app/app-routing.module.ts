@@ -8,11 +8,9 @@ import { AppComponent } from './app.component';
 import { DetailStoryComponent } from './detail-story/detail-story.component';
 import { StoriesComponent } from './stories-component/stories.component';
 import {  Routes,RouterModule}   from '@angular/router';
-import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/stories', pathMatch: 'full' },
-  { path: 'dashboard',  component: DashboardComponentComponent },
   { path: 'detail/:id', component: DetailStoryComponent },
   { path: 'stories',     component: StoriesComponent }
 ];

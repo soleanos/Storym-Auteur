@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { DetailStoryComponent } from './detail-story/detail-story.component';
 import { StoriesComponent } from './stories-component/stories.component';
 import { Routes,RouterModule}   from '@angular/router';
-import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -18,8 +17,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
   declarations: [
     AppComponent,
     DetailStoryComponent,
-    StoriesComponent,
-    DashboardComponentComponent,
+    StoriesComponent
   ],
   imports: [
     BrowserModule,
