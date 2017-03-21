@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { StoryService } from './story.service';
+import { ChapterService } from './chapter.service';
 import { AppComponent } from './app.component';
 import { DetailStoryComponent } from './detail-story/detail-story.component';
 import { StoriesComponent } from './stories-component/stories.component';
@@ -31,7 +32,7 @@ import { ChaptersComponent } from './chapters/chapters.component';
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   exports: [RouterModule],
-  providers: [StoryService],
+  providers: [StoryService,ChapterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

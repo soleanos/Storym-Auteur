@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Story } from './stories-component/stories.component';
+import { Chapter } from './chapters/chapters.component';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -17,15 +17,22 @@ export class ChapterService {
     return Promise.reject(error.message || error);
   }
 
-  getStory(id: number): Promise<Story> {
-    const url = `${this.chaptersUrl}/${id}`;
-    return this.http.get(url)
+  getChapters(): Promise<Chapter[]> {
+    return this.http.get(this.chaptersUrl)
       .toPromise()
-      .then(response => response.json().data as Story)
+      .then(response => response.json().data as Chapter[])
       .catch(this.handleError);
   }
 
-  update(chapter: Story): Promise<Story> {
+  getChapter(id: number): Promise<Chapter> {
+    const url = `${this.chaptersUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as Chapter)
+      .catch(this.handleError);
+  }
+
+  update(chapter: Chapter): Promise<Chapter> {
     const url = `${this.chaptersUrl}/${chapter.id}`;
     return this.http
       .put(url, JSON.stringify(chapter), {headers: this.headers})
@@ -34,7 +41,7 @@ export class ChapterService {
       .catch(this.handleError);
   }
 
-  create(title: string): Promise<Story> {
+  create(title: string): Promise<Chapter> {
     return this.http
       .post(this.chaptersUrl, JSON.stringify({title: title}), {headers: this.headers})
       .toPromise()
