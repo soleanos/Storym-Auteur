@@ -24,8 +24,8 @@ export class ChapterService {
       .catch(this.handleError);
   }
 
-  getChapter(id: number): Promise<Chapter> {
-    const url = `${this.chaptersUrl}/${id}`;
+  getChapter(id: string): Promise<Chapter> {
+    const url = `${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Chapter)

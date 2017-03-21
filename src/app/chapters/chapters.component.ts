@@ -5,6 +5,7 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import { StoryService } from '../story.service';
 import { Story } from '../stories-component/stories.component';
 
+
 @Component({
   selector: 'app-chapters',
   templateUrl: './chapters.component.html',
@@ -20,22 +21,24 @@ export class ChaptersComponent implements OnInit {
   ) { }
 
   selectedChapter: Chapter;
-  chapters : Chapter[];
-  story : Story;
+   chapters : Chapter[];
 
   onSelect(chapter: Chapter): void {
     this.selectedChapter = chapter;
     // console.log(chapter);
   }
 
-  getChapters(): void {
-    console.log(this.story)
-    // for (let chapter of this.story.chapters) {
-    //   console.log(chapter); // 1, "string", false
-    // }
+  getChapters = (story : Story) => {
+    for (let chapter of story.chapters) {
+      this.chapterService.getChapter(chapter).then(chapter => this.chapters.push(chapter) );
+    }
+    console.log(this.chapters)
   }
+
   ngOnInit(): void {
-    this.storyService.getStory(+this.route.params['id']).then(story => this.story = story);
+    this.route.params.subscribe(params => {
+      this.storyService.getStory(+params['id']).then(stories => this.getChapters(stories))
+    });
   }
 
   gotoDetail(): void {
