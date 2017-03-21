@@ -11,13 +11,15 @@ import { Routes,RouterModule}   from '@angular/router';
 import { AppRoutingModule }     from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { ChaptersComponent } from './chapters/chapters.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailStoryComponent,
-    StoriesComponent
+    StoriesComponent,
+    ChaptersComponent
   ],
   imports: [
     BrowserModule,
