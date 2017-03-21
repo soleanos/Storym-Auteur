@@ -5,6 +5,7 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import { StoryService } from '../story.service';
 import 'rxjs/add/operator/switchMap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-story',
@@ -19,6 +20,7 @@ export class DetailStoryComponent implements OnInit {
   constructor(
     private storyService: StoryService,
     private route: ActivatedRoute,
+    private router: Router,
     private location: Location
   ) { }
 
@@ -33,6 +35,9 @@ export class DetailStoryComponent implements OnInit {
       .subscribe(story => this.story = story);
   }
 
+  showChapters(){
+    this.router.navigate(['/chapters', this.story.id]);
+  }
   goBack(): void {
     this.location.back();
   }

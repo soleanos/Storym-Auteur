@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ChapterService } from '../chapter.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { StoryService } from '../story.service';
+import { Story } from '../stories-component/stories.component';
 
 @Component({
   selector: 'app-chapters',
@@ -11,22 +14,28 @@ export class ChaptersComponent implements OnInit {
 
   constructor(
     private chapterService: ChapterService,
-    private router : Router
+    private router : Router,
+    private route: ActivatedRoute,
+    private storyService: StoryService
   ) { }
 
   selectedChapter: Chapter;
   chapters : Chapter[];
+  story : Story;
+
   onSelect(chapter: Chapter): void {
     this.selectedChapter = chapter;
-    console.log(chapter);
+    // console.log(chapter);
   }
 
   getChapters(): void {
-    this.chapterService.getChapters().then(chapters => this.chapters = chapters);
-    console.log(this.chapters)
+    console.log(this.story)
+    // for (let chapter of this.story.chapters) {
+    //   console.log(chapter); // 1, "string", false
+    // }
   }
   ngOnInit(): void {
-    this.getChapters();
+    this.storyService.getStory(+this.route.params['id']).then(story => this.story = story);
   }
 
   gotoDetail(): void {

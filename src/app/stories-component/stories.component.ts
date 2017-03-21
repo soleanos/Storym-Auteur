@@ -55,5 +55,6 @@ export class StoriesComponent implements OnInit {
 export class Story {
   id: number;
   title: string;
+  chapters: any;
 }
 

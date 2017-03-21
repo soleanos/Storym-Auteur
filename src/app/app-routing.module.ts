@@ -13,7 +13,7 @@ import { ChaptersComponent } from './chapters/chapters.component';
 const routes: Routes = [
   { path: '', redirectTo: '/stories', pathMatch: 'full' },
   { path: 'detail/:id', component: DetailStoryComponent },
-  { path: 'chapters', component: ChaptersComponent },
+  { path: 'chapters/:id', component: ChaptersComponent },
   { path: 'stories',     component: StoriesComponent }
 ];
 
