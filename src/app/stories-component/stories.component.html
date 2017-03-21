@@ -1,13 +1,6 @@
-<!--<div *ngIf="selectedStory">-->
-  <!--<h2>-->
-    <!--{{selectedStory.title | uppercase}}-->
-  <!--</h2>-->
-  <!--<button (click)="gotoDetail()">View Details</button>-->
-<!--</div>-->
 
 <md-card *ngFor="let story of stories" (click)="onSelect(story)"
     [class.selected]="story === selectedStory">
-  <!--<span class="badge">{{story.id}}</span>-->
   <md-card-header>{{story.title}}</md-card-header>
   <md-card-content>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
@@ -33,4 +26,3 @@
   </button>
 </div>
 
-<!--<app-detail-story [story]="selectedStory">lol</app-detail-story>-->
