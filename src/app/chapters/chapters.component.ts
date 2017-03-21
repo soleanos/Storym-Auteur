@@ -25,19 +25,23 @@ export class ChaptersComponent implements OnInit {
 
   onSelect(chapter: Chapter): void {
     this.selectedChapter = chapter;
-    // console.log(chapter);
   }
 
   getChapters = (story : Story) => {
-    for (let chapter of story.chapters) {
-      this.chapterService.getChapter(chapter).then(chapter => this.chapters.push(chapter) );
+    let chaps = [];
+
+    if (story.chapters){
+        for (let chap of story.chapters) {
+          this.chapterService.getChapter(chap).then(chapter => chaps.push(chapter));
+        }
     }
-    console.log(this.chapters)
-  }
+
+    return chaps;
+  };
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.storyService.getStory(+params['id']).then(stories => this.getChapters(stories))
+      this.storyService.getStory(+params['id']).then(stories => this.chapters = this.getChapters(stories))
     });
   }
 
