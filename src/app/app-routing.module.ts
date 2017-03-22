@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { DetailStoryComponent } from './detail-story/detail-story.component';
-import { StoriesComponent } from './stories-component/stories.component';
+import { DetailStoryComponent } from './story/story.component';
+import { StoriesComponent } from './stories/stories.component';
 import {  Routes,RouterModule}   from '@angular/router';
 import { ChaptersComponent } from './chapters/chapters.component';
-import { DetailChapterComponent } from './detail-chapter/detail-chapter.component';
+import { DetailChapterComponent } from './chapter/chapter.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/stories', pathMatch: 'full' },

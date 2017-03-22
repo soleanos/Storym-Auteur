@@ -8,8 +8,8 @@ import 'rxjs/add/operator/switchMap';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-detail-chapter',
-  templateUrl: './detail-chapter.component.html',
-  styleUrls: ['./detail-chapter.component.css']
+  templateUrl: 'chapter.component.html',
+  styleUrls: ['chapter.component.css']
 })
 export class DetailChapterComponent implements OnInit {
 

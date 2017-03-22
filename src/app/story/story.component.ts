@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Story } from '../stories-component/stories.component';
+import { Story } from '../stories/stories.component';
 import { Input } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-detail-story',
   moduleId: module.id,
-  templateUrl: './detail-story.component.html',
-  styleUrls: ['./detail-story.component.css']
+  templateUrl: 'story.component.html',
+  styleUrls: ['story.component.css']
 })
 export class DetailStoryComponent implements OnInit {
   @Input()

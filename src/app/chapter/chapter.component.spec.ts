@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailChapterComponent } from './detail-chapter.component';
+import { DetailChapterComponent } from './chapter.component';
 
 describe('DetailChapterComponent', () => {
   let component: DetailChapterComponent;

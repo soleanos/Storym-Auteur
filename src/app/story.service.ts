@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Story } from './stories-component/stories.component';
+import { Story } from './stories/stories.component';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 

@@ -3,7 +3,7 @@ import { ChapterService } from '../chapter.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { StoryService } from '../story.service';
-import { Story } from '../stories-component/stories.component';
+import { Story } from '../stories/stories.component';
 
 
 @Component({
