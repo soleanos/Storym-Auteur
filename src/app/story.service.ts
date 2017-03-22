@@ -6,8 +6,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class StoryService {
 
-  // private storiesUrl = 'api/story';  // URL to web api
-  private storiesUrl = 'http://90.105.169.31:666/story';  // Mon
+  private storiesUrl = 'api/story';  // URL to web api
+  // private storiesUrl = 'http://90.105.169.31:666/story';  // Mon
 
   constructor(private http: Http) { }
   private headers = new Headers({'Content-Type': 'application/json'});
