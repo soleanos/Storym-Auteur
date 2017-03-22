@@ -3,15 +3,7 @@
     [class.selected]="story === selectedStory">
   <md-card-header>{{story.title}}</md-card-header>
   <md-card-content>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
-      Sed vel rutrum tellus. Suspendisse laoreet sapien id ante interdum, <br>
-      sed sodales ante suscipit. Nam tempus nisl volutpat quam ultrices tincidunt. <br>
-      Proin odio orci, viverra venenatis tellus ac, <br>
-      volutpat viverra augue. Proin tempor elit dictum, blandit purus id, scelerisque nulla. <br>
-      Aliquam erat volutpat. <br>
-      Curabitur eros eros, tincidunt eu ornare vel, elementum eu ipsum. Praesent non tellus justo. <br>
-      Nunc malesuada consectetur odio nec egestas. <br>
-      Nulla sit amet odio in neque ultricies aliquam sed nec odio. Ut at semper orci, in accumsan diam.
+    {{story.synopsis}}
   </md-card-content>
   <md-card-actions  *ngIf="story === selectedStory">
       <button  (click)="delete(story); $event.stopPropagation()">Supprimer</button>

@@ -55,5 +55,6 @@ export class Story {
   id: number;
   title: string;
   chapters: any;
+  synopsis:string;
 }
 

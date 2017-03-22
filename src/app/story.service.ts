@@ -7,8 +7,7 @@ import 'rxjs/add/operator/toPromise';
 export class StoryService {
 
   private storiesUrl = 'api/story';  // URL to web api
-  // private storiesUrl = 'http://90.105.169.31:666/story';  // Mon
-
+  //private storiesUrl = 'http://90.105.169.31:666/story';
   constructor(private http: Http) { }
   private headers = new Headers({'Content-Type': 'application/json'});
 
