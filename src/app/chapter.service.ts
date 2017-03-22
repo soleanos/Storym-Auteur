@@ -6,8 +6,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ChapterService {
 
-  private chaptersUrl = 'api/chapter';  // URL to web api
-  // private chaptersUrl = 'http://192.168.1.13:2403/chapters';  // Mon
+  // private chaptersUrl = 'api/chapter';  // URL to web api
+  private chaptersUrl = 'http://192.168.1.13:2403/chapter';  // Mon
 
   constructor(private http: Http) { }
   private headers = new Headers({'Content-Type': 'application/json'});
