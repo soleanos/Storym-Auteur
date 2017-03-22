@@ -13,6 +13,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { ChaptersComponent } from './chapters/chapters.component';
+import { DetailChapterComponent } from './detail-chapter/detail-chapter.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ChaptersComponent } from './chapters/chapters.component';
     AppComponent,
     DetailStoryComponent,
     StoriesComponent,
-    ChaptersComponent
+    ChaptersComponent,
+    DetailChapterComponent
   ],
   imports: [
     BrowserModule,
