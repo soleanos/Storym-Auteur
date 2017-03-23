@@ -1,16 +1,20 @@
+  <md-card *ngFor="let story of stories" (click)="onSelect(story)" [class.selected]="story === selectedStory">
+      <md-card>
+        <md-card-header>{{story.title}}</md-card-header>
+        <md-card-content>
+          {{story.synopsis}}
+        </md-card-content>
+        <md-card-actions  *ngIf="story === selectedStory">
+          <md-button-toggle-group>
 
-<md-card *ngFor="let story of stories" (click)="onSelect(story)"
-    [class.selected]="story === selectedStory">
-  <md-card-header>{{story.title}}</md-card-header>
-  <md-card-content>
-    {{story.synopsis}}
-  </md-card-content>
-  <md-card-actions  *ngIf="story === selectedStory">
-      <button  (click)="delete(story); $event.stopPropagation()">Supprimer</button>
-      <button  (click)="gotoDetail(); $event.stopPropagation()">Modifier</button>
-  </md-card-actions>
-</md-card>
 
+            <button  (click)="delete(story); $event.stopPropagation()">Supprimer</button>
+            <button  (click)="gotoDetail(); $event.stopPropagation()">Modifier</button>
+
+          </md-button-toggle-group>
+        </md-card-actions>
+      </md-card>
+  </md-card>
 <div>
   <label>Story name:</label> <input #storyName />
   <button (click)="add(storyName.value); storyName.value=''">
