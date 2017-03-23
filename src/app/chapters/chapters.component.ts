@@ -21,7 +21,7 @@ export class ChaptersComponent implements OnInit {
   ) { }
 
   selectedChapter: Chapter;
-   chapters : Chapter[];
+  chapters : Chapter[];
 
   onSelect(chapter: Chapter): void {
     this.selectedChapter = chapter;
@@ -29,13 +29,11 @@ export class ChaptersComponent implements OnInit {
 
   getChapters = (story : Story) => {
     let chaps = [];
-
     if (story.chapters){
         for (let chap of story.chapters) {
           this.chapterService.getChapter(chap).then(chapter => chaps.push(chapter));
         }
     }
-
     return chaps;
   };
 
@@ -46,7 +44,7 @@ export class ChaptersComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedChapter.id]);
+    this.router.navigate(['/chapter', this.selectedChapter.id]);
   }
 
   add(title: string): void {

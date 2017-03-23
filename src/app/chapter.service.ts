@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ChapterService {
 
-  private chaptersUrl = 'api/chapter';  // URL to web api
+  private chaptersUrl = 'api/chapter/';  // URL to web api
   // private chaptersUrl = 'http://192.168.1.13:2403/chapter';  // Mon
 
   constructor(private http: Http) { }
@@ -17,6 +17,10 @@ export class ChapterService {
     return Promise.reject(error.message || error);
   }
 
+  forgeUrlApi(id:string) : string {
+    return this.chaptersUrl+id;
+  }
+
   getChapters(): Promise<Chapter[]> {
     return this.http.get(this.chaptersUrl)
       .toPromise()
@@ -24,8 +28,8 @@ export class ChapterService {
       .catch(this.handleError);
   }
 
-  getChapter(id: string): Promise<Chapter> {
-    const url = `${id}`;
+  getChapter(url: string): Promise<Chapter> {
+    // const url = `${url}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Chapter)

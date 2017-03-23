@@ -7,4 +7,9 @@
     {{chapter.text}}
   </md-card-content>
 
+  <md-card-actions  *ngIf="chapter === selectedChapter">
+    <button  (click)="delete(story); $event.stopPropagation()">Supprimer</button>
+    <button  (click)="gotoDetail(); $event.stopPropagation()">Modifier</button>
+  </md-card-actions>
+
 </md-card>
