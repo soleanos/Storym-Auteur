@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { StoryService } from '../story.service';
 import { Story } from '../stories/stories.component';
-
+import { Location }                 from '@angular/common';
 
 @Component({
   selector: 'app-chapters',
@@ -17,11 +17,14 @@ export class ChaptersComponent implements OnInit {
     private chapterService: ChapterService,
     private router : Router,
     private route: ActivatedRoute,
-    private storyService: StoryService
+    private storyService: StoryService,
+    private location: Location
   ) { }
 
   selectedChapter: Chapter;
+  newChapter: any;
   chapters : Chapter[];
+
 
   onSelect(chapter: Chapter): void {
     this.selectedChapter = chapter;
@@ -37,7 +40,12 @@ export class ChaptersComponent implements OnInit {
     return chaps;
   };
 
+  goBack(): void {
+    this.location.back();
+  }
+
   ngOnInit(): void {
+    this.newChapter =  {};
     this.route.params.subscribe(params => {
       this.storyService.getStory(+params['id']).then(stories => this.chapters = this.getChapters(stories))
     });
@@ -47,14 +55,15 @@ export class ChaptersComponent implements OnInit {
     this.router.navigate(['/chapter', this.selectedChapter.id]);
   }
 
-  add(title: string): void {
-    title = title.trim();
-    if (!title) { return; }
-    this.chapterService.create(title)
-      .then(chapter => {
-        this.chapters.push(chapter);
-        this.selectedChapter = null;
-      });
+  add(chap: Chapter): void {
+    console.log(chap);
+    // title = title.trim();
+    // if (!title) { return; }
+    // this.chapterService.create(title)
+    //   .then(chapter => {
+    //     this.chapters.push(chapter);
+    //     this.selectedChapter = null;
+    //   });
   }
 
   delete(chapter: Chapter): void {

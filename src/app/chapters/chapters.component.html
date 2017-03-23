@@ -13,3 +13,23 @@
   </md-card-actions>
 
 </md-card>
+
+<md-card >
+
+  <md-card-header>
+    Ajouter un chapitre
+  </md-card-header>
+
+  <md-card-content>
+    <div><label>Titre  : </label> <input type="text" [(ngModel)]="newChapter.title" required/></div>
+    <div><label>Texte : </label> <input type="text" [(ngModel)]="newChapter.text" required/></div>
+  </md-card-content>
+<div>
+
+  <button (click)="add(newChapter); ">
+    Créer
+  </button>
+</div>
+
+</md-card>
+<button (click)="goBack()">Retour</button>
