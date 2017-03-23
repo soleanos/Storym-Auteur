@@ -7,6 +7,7 @@ import { ChapterService } from '../chapter.service';
 import 'rxjs/add/operator/switchMap';
 import { Router } from '@angular/router';
 @Component({
+  moduleId: module.id,
   selector: 'app-detail-chapter',
   templateUrl: 'chapter.component.html',
   styleUrls: ['chapter.component.css']
@@ -28,9 +29,9 @@ export class DetailChapterComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.route.params
-    //   .switchMap((params: Params) => this.chapterService.getChapter(+params['id']))
-    //   .subscribe(chapter => this.chapter = chapter);
+    this.route.params
+      .switchMap((params: Params) => this.chapterService.getChapter(this.chapterService.forgeUrlApi(params['id'])))
+      .subscribe(chapter => this.chapter = chapter)
   }
 
   showChapters(){

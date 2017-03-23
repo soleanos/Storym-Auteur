@@ -7,10 +7,10 @@ import { DetailChapterComponent } from './chapter/chapter.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/stories', pathMatch: 'full' },
-  { path: 'detail/:id', component: DetailStoryComponent },
-  { path: 'chapters/:id', component: ChaptersComponent },
-  { path: 'stories',     component: StoriesComponent },
-  { path: 'chapter/:id',     component: DetailChapterComponent }
+  { path: 'detail/:id',component: DetailStoryComponent },
+  { path: 'chapters/:id',component: ChaptersComponent },
+  { path: 'stories',component: StoriesComponent },
+  { path: 'chapter/:id',component: DetailChapterComponent }
 ];
 
 @NgModule({
