@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 import { StoryService } from '../story.service';
 import { Router } from '@angular/router';
 @Component({
@@ -12,6 +12,7 @@ export class StoriesComponent implements OnInit {
   constructor(private storyService: StoryService, private router : Router) { }
 
   selectedStory: Story;
+  openAddComponent : Boolean;
 
   stories : Story[];
   onSelect(story: Story): void {
@@ -24,10 +25,15 @@ export class StoriesComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getStories();
+    this.openAddComponent = false;
   }
 
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedStory.id]);
+  }
+
+  ShowAddComponent(): void {
+    this.openAddComponent = true;
   }
 
   add(title: string): void {

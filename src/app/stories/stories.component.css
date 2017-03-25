@@ -52,3 +52,16 @@ button.delete {
   background-color: gray !important;
   color:white;
 }
+
+.add-button{
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.containerX {
+  margin-top: 45px;
+  border: solid 1px #b6b6b6;
+  box-sizing: content-box !important;
+}

@@ -14,7 +14,9 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { ChaptersComponent } from './chapters/chapters.component';
 import { DetailChapterComponent } from './chapter/chapter.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AddChapterComponent } from './add-chapter/add-chapter.component';
+import { AddStoryComponent } from './add-story/add-story.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DetailChapterComponent } from './chapter/chapter.component';
     DetailStoryComponent,
     StoriesComponent,
     ChaptersComponent,
-    DetailChapterComponent
+    DetailChapterComponent,
+    AddChapterComponent,
+    AddStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { DetailChapterComponent } from './chapter/chapter.component';
     MaterialModule,
     AppRoutingModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    FlexLayoutModule
   ],
   exports: [RouterModule],
   providers: [StoryService,ChapterService],

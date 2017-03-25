@@ -1,4 +1,34 @@
+<div *ngIf="!openAddComponent">
   <md-card *ngFor="let story of stories" (click)="onSelect(story)" [class.selected]="story === selectedStory">
+        <md-card>
+          <md-card-header>{{story.title}}</md-card-header>
+          <md-card-content>
+            {{story.synopsis}}
+          </md-card-content>
+          <md-card-actions  *ngIf="story === selectedStory">
+            <md-button-toggle-group>
+
+
+              <button  (click)="delete(story); $event.stopPropagation()">Supprimer</button>
+              <button  (click)="gotoDetail(); $event.stopPropagation()">Modifier</button>
+
+            </md-button-toggle-group>
+          </md-card-actions>
+        </md-card>
+    </md-card>
+</div>
+
+<app-add-story *ngIf="openAddComponent"></app-add-story>
+
+<!--<label>Story name:</label> <input #storyName />
+<button (click)="add(storyName.value); storyName.value=''">
+  Créer
+</button>-->
+
+<!-- <md-grid-list cols="2" rowHeight="300px">
+  <md-grid-tile  [colspan]="1"  *ngFor="let story of stories" >
+
+    <md-card (click)="onSelect(story)" [class.selected]="story === selectedStory">
       <md-card>
         <md-card-header>{{story.title}}</md-card-header>
         <md-card-content>
@@ -14,11 +44,10 @@
           </md-button-toggle-group>
         </md-card-actions>
       </md-card>
-  </md-card>
-<div>
-  <label>Story name:</label> <input #storyName />
-  <button (click)="add(storyName.value); storyName.value=''">
-    Créer
-  </button>
-</div>
+    </md-card>
+
+  </md-grid-tile>
+</md-grid-list>-->
+
+<button *ngIf="!openAddComponent" (click)="ShowAddComponent()" md-fab class = "add-button  " ><md-icon>add</md-icon></button>
 
